@@ -1,7 +1,11 @@
 <html>
-
+<head>
+<link rel="stylesheet" href="/css/styles.css" >
+</head>
 <body>
-<h3>welcome to bookjunky</h3>
+
+{{> menu}}
+<h1>welcome to bookjunky</h1>
 
 {{#bookjunky}}
 
@@ -10,6 +14,15 @@
 <h3>{{year}}</h3>
 <h4>{{description}}</h4>
 <h6>{{reviews}}</h6>
+<form action="/edit" method="POST" >
+  <input type="hidden" name="bookid" value = "{{bookid}}"/>
+  <button>update</button>
+</form>
+<form action="/delete" method="POST" >
+  <input type="hidden" name="bookid" value = "{{bookid}}"/>
+  <button>delete</button>
+</form>
+
 {{/bookjunky}}
 </body>
 

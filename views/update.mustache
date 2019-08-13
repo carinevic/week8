@@ -1,15 +1,21 @@
 <html>
 <body>
 
+{{>menu}}
+
 <h1>updated books</h1>
+{{#book}}
 <form action="/update" method="POST">
-      
-        <input type="text" name="author"  placehoder="author"/>
-        <input type="text" name="year"  placehoder="year"/>
-          <input type="text" name="bookid"  placehoder="bookid"/>
+        <input type="text" name="title" value="{{title}}"/>
+        <input type="text" name="author"  value="{{author}}"/>
+        <input type="text" name="year"  value="{{year}}"/>
+        <input type="text" name="description"  value="{{description}}"/>
+        <input type="text" name="reviews"  value="{{reviews}}"/>
+        <input type="hidden" name="bookid" value = "{{bookid}}"/>
         <button>Save</button>
         
     </form>
+    {{/book}}
 </body>
 
 </html>
